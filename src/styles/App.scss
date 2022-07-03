@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+$primary: #f5f6fa;
+$secondary: #fff;
+
+body {
+    background-color: $primary;
+}
+
+#container {
+    margin: 0;
+    min-height: 100vh;
+    background-color: $primary;
+    display: grid;
+    place-content: center;
+
+    .container-header {
+        font-size: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            font-weight: 600;
+        }
+    }
+
+    .container-body {
+        padding: 10px;
+        width: 900px;
+
+        .container-body-header {
+            border-radius: 5px;
+            background-color: $secondary;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .container-header-left {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+
+                img {
+                    width: 150px;
+                }
+
+                h1 {
+                    font-size: 25px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .container-card {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            width: 100%;
+
+            .container-left {
+                display: flex;
+                column-gap: 10px;
+                row-gap: 5px;
+                width: 500px;
+                flex-wrap: wrap;
+
+                .card {
+                    background-color: $secondary;
+                    padding: 10px;
+                    width: 235px;
+                    height: 220px;
+                    border-radius: 5px;
+
+                    &.covid-cases {
+                        border-top: 5px solid #c5110f;
+                    }
+
+                    &.covid-active {
+                        border-top: 5px solid #cb8923;
+                    }
+
+                    &.covid-recovered {
+                        border-top: 5px solid #42c50f;
+                    }
+
+                    &.covid-deaths {
+                        border-top: 5px solid #1e2028;
+                    }
+
+                    header {
+                        padding: 5px 0;
+                        font-size: 18px;
+                        border-bottom: 1px dashed #d6d0d0;
+                    }
+
+                    .card-body {
+                        padding: 10px 0;
+                        width: 100%;
+
+                        h3 {
+                            font-weight: 500;
+                            font-size: 30px;
+                            line-height: 110px;
+                            margin-bottom: 10px;
+                            border-bottom: 1px solid #d6d0d0;
+
+                            &.covid-cases {
+                                color: #c5110f;
+                            }
+
+                            &.covid-active {
+                                color: #cb8923;
+                            }
+
+                            &.covid-recovered {
+                                color: #42c50f;
+                            }
+
+                            &.covid-deaths {
+                                color: #c5110f;
+                            }
+                        }
+
+                        span {
+                            width: 100%;
+                            padding: 10px 0;
+
+                        }
+
+
+                    }
+                }
+            }
+
+            .container-right {
+                background-color: $secondary;
+                padding: 10px;
+                width: 400px;
+
+                border-radius: 5px;
+
+                header {
+                    padding: 5px 0;
+                    font-size: 20px;
+                    border-bottom: 1px dashed #D3D3D3;
+                }
+
+                .MuiPaper-elevation1,
+                .MuiCardContent-root {
+                    box-shadow: unset;
+                    padding: unset;
+                }
+
+                .country-table {
+                    margin-top: 5px;
+                    height: 400px;
+                    overflow: scroll;
+
+                    table {
+                        color: #4d4848;
+
+                        .text-left {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 10px;
+                        }
+
+                        .text-left img {
+                            width: 40px;
+                        }
+
+
+                        tr {
+                            display: flex;
+                            padding: 5px 0;
+                            justify-content: space-between;
+                            border-bottom: 1px solid #D3D3D3;
+                        }
+
+                        td {
+                            padding: 10px 0;
+                        }
+                    }
+                }
+
+                .country-table::-webkit-scrollbar {
+                    display: none;
+                }
+
+
+            }
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .container-header{
+            padding-top: 10px;
+        }
+        .container-body {
+            width: 100%;
+
+            .container-card {
+                width: 100%;
+
+                .container-left {
+                    width: 100%;
+                    row-gap: 15px;
+
+                    .card{
+                        width: 100%;
+                    }
+                }
+
+                .container-right {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .container-body {
+            width: 100%;
+
+            .container-body-header {
+                flex-direction: column;
+                row-gap: 10px;
+
+                .container-header-left{
+                    flex-direction: column;
+                }
+
+                div{
+                    width: 100%;
+                }
+            }
+
+            .container-card {
+                width: 100%;
+                flex-direction: column;
+
+                .container-left {
+                    width: 100%;
+                    place-content: center;
+                }
+
+                .container-right {
+                    width: 100%;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+}
